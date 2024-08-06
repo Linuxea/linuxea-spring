@@ -3,13 +3,13 @@ package com.linuxea.spring;
 public class Property {
     private String name;
     private Object value;
-    private String ref;
+    private Object ref;
 
     public Property(String name, Object value) {
         this(name, value, null);
     }
 
-    public Property(String name, Object value, String ref) {
+    public Property(String name, Object value, Object ref) {
         this.name = name;
         this.value = value;
         this.ref = ref;
@@ -31,11 +31,11 @@ public class Property {
         this.value = value;
     }
 
-    public String getRef() {
+    public Object getRef() {
         return ref;
     }
 
-    public void setRef(String ref) {
+    public void setRef(Object ref) {
         this.ref = ref;
     }
 }

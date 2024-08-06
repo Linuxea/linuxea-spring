@@ -1,4 +1,4 @@
-package com.linuxea;
+package com.linuxea.spring;
 
 
 public class Person {
@@ -6,6 +6,8 @@ public class Person {
     private String name;
 
     private int age;
+
+    private Dog dog;
 
     public String getName() {
         return name;
@@ -23,11 +25,20 @@ public class Person {
         this.age = age;
     }
 
+    public Dog getDog() {
+        return dog;
+    }
+
+    public void setDog(Dog dog) {
+        this.dog = dog;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", dog=" + dog +
                 '}';
     }
 }

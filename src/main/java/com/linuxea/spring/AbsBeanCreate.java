@@ -12,7 +12,11 @@ public abstract class AbsBeanCreate implements BeanCreate {
             for (Property property : properties) {
                 Field declaredField = beanDefinition.gettClass().getDeclaredField(property.getName());
                 declaredField.setAccessible(true);
-                declaredField.set(newInstance, property.getValue());
+                if (property.getRef() != null) {
+                    declaredField.set(newInstance, property.getRef());
+                } else {
+                    declaredField.set(newInstance, property.getValue());
+                }
             }
             return newInstance;
         } catch (Exception e) {
